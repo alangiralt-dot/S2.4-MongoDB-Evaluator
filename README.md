@@ -30,7 +30,7 @@ MongoDB és un exemple típic de base de dades NoSQL. A diferència de les bases
 
 ## 🛠️ Com fer la tasca
 
-1. Importa la col·lecció JSON de restaurants a la teva base de dades MongoDB local (col·lecció `restaurants` dins la base de dades `nyc`).
+1. Importa la col·lecció JSON de [restaurants](https://github.com/IT-Academy-Back/S2.4-MongoDB-Evaluator/blob/main/mongo-seed/restaurants.json) a la teva base de dades MongoDB local (col·lecció `restaurants` dins la base de dades `nyc`).
 
    🔧 **Opcions per fer-ho:**
    - Pots fer-ho utilitzant una instància local de MongoDB.
