@@ -24,6 +24,7 @@ db.restaurants.find({...}, { _id: 0, campo1: 1, campo2: 1 });
 - **Regles**:
   - Excloure sempre \_id: 0.
   - Respetar **l'orden exacte** dels camps en les projeccions.
+  - Escriu les consultes en una sola línia.
 ### **📂 Arxiu** indexes.js
 - Ubicació: query/indexes.js
 - **Exemple**:
