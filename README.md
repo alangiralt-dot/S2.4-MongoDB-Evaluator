@@ -22,7 +22,18 @@ Pots editar els arxius directament a GitHub amb el botó ‘edit this file’.
 db.restaurants.find({...}, { _id: 0, campo1: 1, campo2: 1 });
 ```
 - **Regles**:
-  - Excloure sempre \_id: 0.
+   - **Excloure sempre** `_id: 0` a la projecció.  
+   
+     MongoDB genera automàticament un identificador únic per a cada document anomenat `_id`, i per defecte és un **ObjectId**. Aquest identificador ocupa 12 bytes i conté:
+   
+     - una marca de temps (4 bytes),
+     - un identificador de màquina (3 bytes),
+     - el PID del procés que el crea (2 bytes),
+     - i un comptador incremental (3 bytes).
+   
+     👉 A causa d’aquesta estructura, el valor de `_id` **serà diferent per a cada alumne**, ja que es genera en temps real i depèn del servidor on s’executa la base de dades.  
+     **Per aquest motiu, el script que compara automàticament els resultats no pot fer servir `_id`, ja que sempre sortiria diferent.**  
+     Cal, per tant, **excloure’l sempre** a les consultes d’aquest exercici.
   - Respetar **l'orden exacte** dels camps en les projeccions.
   - Escriu les consultes en una sola línia.
 ### **📂 Arxiu** indexes.js
