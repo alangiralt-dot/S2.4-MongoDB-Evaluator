@@ -12,7 +12,7 @@ Aquest projecte és un Repositori de Plantilla de GitHub dissenyat per avaluar c
 
 -----
 ## **✍️ 2.Escriure Consultes i Índexs**
-Pots editar els arxius directament a GitHub amb el botó ‘edit this file’.
+Editar els arxius directament a GitHub amb el botó ‘edit this file’.
 ### **📂 Arxiu** queries.js
 - Ubicació: query/queries.js
 - **Format requerit**:
