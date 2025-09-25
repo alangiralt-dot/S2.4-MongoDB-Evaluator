@@ -14,6 +14,7 @@ Aquest projecte és un Repositori de Plantilla de GitHub dissenyat per avaluar c
 ## **✍️ 2.Escriure Consultes i Índexs**
 Editar els arxius directament a GitHub amb el botó ‘edit this file’.
 ### **📂 Arxiu** queries.js
+- Escriu les teves consultes en aquest fitxer seguint estrictament les regles.
 - Ubicació: query/queries.js
 - **Format requerit**:
 
@@ -37,6 +38,7 @@ db.restaurants.find({...}, { _id: 0, campo1: 1, campo2: 1 });
   - Respetar **l'orden exacte** dels camps en les projeccions.
   - Escriu les consultes en una sola línia.
 ### **📂 Arxiu** indexes.js
+- Si cal crear índexs, utilitza aquest fitxer.
 - Ubicació: query/indexes.js
 - **Exemple**:
 
