@@ -44,17 +44,9 @@ db.restaurants.find({...}, { _id: 0, campo1: 1, campo2: 1 });
 db.restaurants.createIndex({ borough: 1 });
 db.restaurants.createIndex({ "location.coordinates": "2dsphere" });
 ```
------
-## **🔍 3. Provar Localment (Opcional)**
-Pots fet proves y executar l'anàlisi localment.
-
-Segueix les instruccions a:
-\
-📄 [script/README.md](https://github.com/IT-Academy-Back/S2.4-MongoDB-Evaluator/blob/main/script/README.md)
-
 
 -----
-## **📤 4. Pujar Canvis a GitHub**
+## **📤 3. Pujar Canvis a GitHub**
 1. **Desa els teus canvis**:
    -  Fet clic al botó verd **Commits changes**
    -  Cada cop que desis els canvis s'executarà una nova prova.
@@ -65,7 +57,7 @@ Segueix les instruccions a:
       - **Informe de rendiment**: docs/performanceReport.md
       - **Comparació de resultats**: docs/expectedResults.md
 -----
-## **🔄 5. Reintents y Correccions**
+## **🔄 4. Reintents y Correccions**
 Si hi ha errors:
 
 1. Corregeix les consultes o índexs als arxius corresponents.
@@ -79,6 +71,16 @@ Si hi ha errors:
   - **Rendiment** (ús d'índexs, eficiència).
 - Si el teu repositori és *private*, assegura't que **GitHub Actions tingui permisos** (a Settings > Actions > General).
 -----
+
+## **🔍 Vols fer provas localment? (Opcional)**
+Pots fet proves y executar l'anàlisi localment.
+
+Segueix les instruccions a:
+\
+📄 [script/README.md](https://github.com/IT-Academy-Back/S2.4-MongoDB-Evaluator/blob/main/script/README.md)
+
+-----
+
 ## **🆘 Soport**
 Tens problemes? Obre un **Issue** al repositori plantilla o contacta amb el teu mentor.
 
