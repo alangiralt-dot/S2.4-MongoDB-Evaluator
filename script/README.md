@@ -10,7 +10,8 @@ cd mongodb-queries-elTeuNom
 ```
 
 ## **📤 2. Pujer Canvis a GitHub**
-1. **Desa els teus canvis**:
+1. **Escriu les teves consultes** a `query/queries.js` **i els índexs** a `query/indexes.js`
+2. **Desa els teus canvis**:
 
 ```bash
 git add query/queries.js query/indexes.js
