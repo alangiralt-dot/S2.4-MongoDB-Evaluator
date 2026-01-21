@@ -61,9 +61,9 @@ function isUsingIndex(plan) {
   return false;
 }
 
-// Detect if a field is used in a query operation that would benefit from an index
+
 function isFieldUsedInQuery(field, commandMongosh) {
-  // Check for basic field usage
+  
   if (!commandMongosh.includes(field)) return false;
   
   // Check for field usage in specific query operations
@@ -79,7 +79,7 @@ function isFieldUsedInQuery(field, commandMongosh) {
   return queryPatterns.some(pattern => commandMongosh.includes(pattern));
 }
 
-// Enhanced query analysis
+
 async function analyzeQuery(commandMongosh) {
   const explain = await getMongoExplain(commandMongosh);
   if (!explain) {
@@ -98,10 +98,10 @@ async function analyzeQuery(commandMongosh) {
 
   const issues = [];
 
-  // Enhanced index usage analysis
+
   recommendedIndexes.forEach(field => {
     if (isFieldUsedInQuery(field, commandMongosh) && !isUsingIndex(planner)) {
-      // Determine the severity based on query type
+
       let severity = "medium";
       let problemType = "Filtering";
       
@@ -122,7 +122,7 @@ async function analyzeQuery(commandMongosh) {
     }
   });
 
-  // Query efficiency analysis
+
   if (documentsExamined > 5 * documentsReturned && documentsReturned > 0) {
     issues.push({
       message: `⚠️ Examined ${documentsExamined} docs to return ${documentsReturned} (ratio ${(documentsExamined/documentsReturned).toFixed(1)}:1)`,
@@ -130,7 +130,7 @@ async function analyzeQuery(commandMongosh) {
     });
   }
 
-  // Check for COLLSCAN when we expected IXSCAN
+  
   if (!isUsingIndex(planner)) {
     const shouldHaveIndex = recommendedIndexes.some(field => 
       isFieldUsedInQuery(field, commandMongosh));
@@ -163,7 +163,7 @@ function generateReport({ commandMongosh, executionTime, documentsReturned, docu
   report += `- 🛠️ Execution stage: ${chalk.cyan(stage)}\n`;
 
   if (issues.length > 0) {
-    // Group issues by severity for better visual organization
+  
     const criticalIssues = issues.filter(i => i.severity === "critical");
     const highIssues = issues.filter(i => i.severity === "high");
     const mediumIssues = issues.filter(i => i.severity === "medium");
@@ -207,7 +207,7 @@ function generateReport({ commandMongosh, executionTime, documentsReturned, docu
   return report;
 }
 
-// Updated report generation to handle new issue format
+
 function generateReportMD({ commandMongosh, executionTime, documentsReturned, documentsExamined, stage, issues }) {
   let report = "## 📊 Query Performance Report\n\n";
   report += `- 🧪 **Query**: \`${commandMongosh}\`\n`;
