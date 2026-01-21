@@ -92,4 +92,31 @@ node script/performacenReporter.js
 ```
 ---
 
-9. 📁 **El resultat es mostraraà per consola i es desarà un informe a `docs/performanceReport.md`**
+9. 📁 **El resultat es mostraraà per consola i es desarà un informe a** `docs/performanceReport.md`
+
+---
+
+10. 🚨 **Què fer si les consultes no funcionen o vols corregir-les?**
+
+El fitxer `docker-compose.yml` executa la càrrega de dades i la creació d'índexs només la primera vegada que s'aixeca el contenidor. 
+
+Si els resultats no són els esperats, segueix estrictament aquest ordre:
+
+1. Corregeix els fitxers: 
+- `query/queries.js` 
+- `query/indexes.js`
+2. Torna a formatar les consultes:
+```bash
+node script/formatQueries.js.
+```
+3. Atura i elimina el contenidor actual:
+```bash
+docker-compose down
+```
+4. Torna a aixecar el contenidor de zero:
+```bash
+docker-compose up -d
+```
+*(Això garanteix que els nous índexs i la configuració s'apliquin correctament sobre una base de dades neta).*
+
+5. Torna a executar el punt 5 i posteriors per verificar els canvis.
