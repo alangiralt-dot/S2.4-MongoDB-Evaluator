@@ -88,7 +88,7 @@ Els resultats es mostraran per consola i es desaran a `docs/resultReport.md`
 8. ⚡ **Executa l'anàlisi de rendiment**
 
 ```bash
-node script/performaceReporter.js
+node script/performacenReporter.js
 ```
 ---
 
